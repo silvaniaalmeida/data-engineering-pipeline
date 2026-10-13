@@ -20,3 +20,6 @@ venv/
 
 # Arquivos temporários
 *.log
+
+# Arquivos gerados pelo pipeline ETL
+data/processed/
