@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Ambientes virtuais
+.venv/
+venv/
+
+# Configurações e credenciais
+.env
+.env.*
+!.env.example
+
+# Ferramentas de testes
+.pytest_cache/
+.coverage
+
+# Arquivos temporários
+*.log
