@@ -16,11 +16,10 @@ def transform_projects(projects):
         budget_variance = actual_cost - budget
 
         if budget > 0:
-            variance_pct = (
-                budget_variance / budget
-            ) * Decimal("100")
+            variance_pct = ((budget_variance / budget) * Decimal("100")).quantize(Decimal("0.01"))
         else:
             variance_pct = None
+
 
         transformed_project = {
             "project_id": project_id,
