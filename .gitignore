@@ -23,3 +23,6 @@ venv/
 
 # Arquivos gerados pelo pipeline ETL
 data/processed/
+
+# Credenciais e variáveis de ambiente
+.env
