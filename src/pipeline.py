@@ -4,6 +4,12 @@ from src.extract import extract_projects
 from src.transform import transform_projects
 from src.load import load_projects
 from src.load_postgres import load_projects_postgres
+from src.data_quality import (
+    validate_required_fields,
+    validate_project_ids,
+    validate_unique_project_ids,
+    validate_financial_values,
+)
 
 
 def run_pipeline():
@@ -20,6 +26,14 @@ def run_pipeline():
     # Extract
     projects = extract_projects(input_path)
     print(f"Extract: {len(projects)} projetos extraídos.")
+
+    # Data Quality
+    validate_required_fields(projects)
+    validate_project_ids(projects)
+    validate_unique_project_ids(projects)
+    validate_financial_values(projects)
+
+    print(f"Data Quality: {len(projects)} projetos validados.")
 
     # Transform
     transformed_projects = transform_projects(projects)
